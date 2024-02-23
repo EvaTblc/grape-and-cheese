@@ -1,0 +1,10 @@
+<div class="home-banner">
+  <div class="banner-content text-center">
+    <p>Votre cave au fond de votre poche</p>
+    <% if current_user  %>
+      <%= button_to "Commencer", "#", class: "button-homepage" %>
+      <% else %>
+        <%= button_to "Connexion", new_user_session_path, class: "button-homepage"  %>
+      <% end %>
+  </div>
+</div>
