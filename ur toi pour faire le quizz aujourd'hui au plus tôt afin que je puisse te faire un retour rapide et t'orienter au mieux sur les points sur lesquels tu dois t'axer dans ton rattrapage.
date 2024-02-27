@@ -1,0 +1,53 @@
+[33mcommit 1852aa75bfc44f4a5b1f6d9336b1880b15218c1e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Eva Touboulic <etouboulic@gmail.com>
+Date:   Fri Feb 23 20:38:30 2024 +0100
+
+    design homepage
+
+[33mcommit b2b16dcab1b7659e214fbc98001b66de3543e8e0[m
+Author: Eva Touboulic <etouboulic@gmail.com>
+Date:   Fri Feb 23 19:26:24 2024 +0100
+
+    setup controller devise
+
+[33mcommit 4afad13829539dbd4b8399841d1e5cd45ea4fc16[m
+Author: Eva Touboulic <etouboulic@gmail.com>
+Date:   Thu Feb 22 12:14:02 2024 +0100
+
+    migration full name user
+
+[33mcommit 5b769bd6ed0a93c12769d8073b5bfffc96b75fd4[m
+Author: Eva Touboulic <etouboulic@gmail.com>
+Date:   Thu Feb 22 11:12:35 2024 +0100
+
+    setup active storage
+
+[33mcommit e509c630d3b2934f856dbd5d354e1fcb4641fbf8[m
+Author: Eva Touboulic <etouboulic@gmail.com>
+Date:   Thu Feb 22 11:11:13 2024 +0100
+
+    setup cloudinary
+
+[33mcommit 698fed6672ce4d7642f888989ae9aebe7d2e1ce9[m
+Author: Eva Touboulic <etouboulic@gmail.com>
+Date:   Thu Feb 22 11:09:43 2024 +0100
+
+    add dotenv rails
+
+[33mcommit 9d083651123f13fee6dccd84ba6cb0815aaaa48d[m
+Author: Eva Touboulic <etouboulic@gmail.com>
+Date:   Thu Feb 22 11:05:43 2024 +0100
+
+    setup scss & simple form
+
+[33mcommit 43c04f7a6fe945b4949be3b5a9d12b6dcb4a0368[m
+Author: Eva Touboulic <etouboulic@gmail.com>
+Date:   Thu Feb 22 11:04:08 2024 +0100
+
+    setup tailwind & devise
+
+[33mcommit b433393fbe0c75f891b19a993c5987b5daceeebd[m
+Author: Eva Touboulic <etouboulic@gmail.com>
+Date:   Thu Feb 22 10:55:15 2024 +0100
+
+    rails new
