@@ -1,6 +1,23 @@
 .sessions {
-    h2 {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("homepage.jpg");
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+
+  h2 {
     font-family: 'Oswald', sans-serif;
-    color: yellowgreen
+    color: yellowgreen;
+    margin-top: 20px
+  }
+
+  label {
+    color: white
+  }
+
+  a {
+    color: white
   }
 }
