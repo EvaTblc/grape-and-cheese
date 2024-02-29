@@ -1,9 +1,11 @@
 .button-homepage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 150px;
   height: 45px;
   font-family: 'Oswald', sans-serif;
   font-size: 20px;
-
   border: solid;
   border-radius: 5px;
   border-color: yellowgreen;

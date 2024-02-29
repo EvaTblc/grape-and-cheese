@@ -1,0 +1,27 @@
+.cards-index {
+  display: flex;
+  flex-direction: column;
+
+  img {
+    height: 120px;
+    object-fit: contain;
+    margin: 10px
+  }
+
+  .cards-content {
+    display: flex;
+    align-items: center;
+    box-shadow: 10px 5px 5px grey;
+    border: solid 1px grey;
+    border-radius: 5px;
+    margin-bottom: 15px;
+
+  }
+  .cards-infos {
+
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+
+  }
+}

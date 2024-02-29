@@ -1,0 +1,28 @@
+  <div class="cards-index">
+
+    <% @wines.each do |wine| %>
+      <div class="cards-content">
+
+        <% if wine.photo.attach? %>
+          <%= image_tag wine.photo.key %>
+        <% else %>
+          <%= image_tag "default-wine.png" %>
+        <% end %>
+
+        <div class="cards-infos">
+          <div><%= wine.name %></div>
+          <div><%= wine.vignoble %></div>
+          <div><%= wine.year %></div>
+          <% case wine.color %>
+          <% when "Rouge" %>
+            <div class="red-wine"></div>
+          <% when "Blanc" %>
+            <div class="white-wine"></div>
+          <% when "Rosé" %>
+            <div class="pink-wine"></div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>

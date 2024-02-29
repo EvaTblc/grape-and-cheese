@@ -1,1 +1,12 @@
-<h1>Index</h1>
+<div class="container">
+  <div>
+    <h2>Mes vins</h2>
+    <%= render "cards", wines: @user_wines %>
+  </div>
+
+  <div>
+    <h2>Trouver un vin</h2>
+    <%= render "cards", wines: @wines %>
+  </div>
+
+</div>
