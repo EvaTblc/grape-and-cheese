@@ -1,11 +1,17 @@
-<div class="container">
+<div class="index-container">
+    <div><h1>TITRE</h1></div>
   <div>
     <h2>Mes vins</h2>
-    <%= render "cards", wines: @user_wines %>
+    <% if @user_wines.empty? %>
+      <%= link_to 'Commencer votre Cave!', root_path %>
+    <% else %>
+      <%= render "cards", wines: @user_wines %>
+    <% end %>
   </div>
 
   <div>
     <h2>Trouver un vin</h2>
+    <div> Search bar</div>
     <%= render "cards", wines: @wines %>
   </div>
 

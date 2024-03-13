@@ -9,6 +9,7 @@
   }
 
   .cards-content {
+    background-color: $beige;
     display: flex;
     align-items: center;
     box-shadow: 10px 5px 5px grey;
@@ -18,10 +19,17 @@
 
   }
   .cards-infos {
-
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     margin: 15px;
-
+    position: relative;
   }
+}
+.cards-infos>.selected {
+  align-self: flex-end;
+  margin-bottom: 10px;
+  position: absolute;
+  bottom: 60px;
+  left: 200px;
 }
