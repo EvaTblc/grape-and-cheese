@@ -6,7 +6,7 @@
         <% if wine.photo.attach? %>
           <%= image_tag wine.photo.key %>
         <% else %>
-          <%= image_tag "default-wine.png" %>
+          <%= image_tag "default-wine.jpg" %>
         <% end %>
 
         <div class="cards-infos">
@@ -20,9 +20,11 @@
             <div class="pink-wine selected"></div>
           <% end %>
 
-          <div><%= wine.name %></div>
-          <div><%= wine.vignoble %></div>
-          <div><%= wine.year %></div>
+          <div class="wine-infos">
+            <div class="name"><%= wine.name %></div>
+            <div class="vignoble"><%= wine.vignoble %></div>
+            <div class="year"><%= wine.year %></div>
+          </div>
 
         </div>
       </div>
