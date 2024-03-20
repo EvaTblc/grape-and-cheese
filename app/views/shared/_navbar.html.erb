@@ -1,30 +1,36 @@
 <% if user_signed_in? %>
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon p-0 fixed-bottom <%= "no-bg" if current_page?(wines_path) %>">
     <div class="footer-container">
-        <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
-          <%= link_to "#" do %>
-            <i class="fa-solid fa-comments icon" style="color: #ffffff;"></i>
-          <% end %>
-          <p>Messages</p>
-        </div>
-        <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
-          <%= link_to "#" do %>
-            <i class="fa-solid fa-camera icon"></i>
-          <% end %>
-          <p>Caméra</p>
-        </div>
-        <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
-          <%= link_to "#" do %>
-            <i class="fa-solid fa-cheese icon" style="color: #ffffff;"></i>
-          <% end %>
-          <p>Suggestions</p>
-        </div>
-        <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
-          <%= link_to "#" do %>
-            <i class="fa-solid fa-wine-bottle icon" style="color: #ffffff;"></i>
-          <% end %>
-          <p>Ma Cave</p>
-        </div>
+      <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
+        <%= link_to "#" do %>
+          <i class="fa-solid fa-comments icon" style="color: #ffffff;"></i>
+        <% end %>
+        <p>Messages</p>
+      </div>
+      <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
+        <%= link_to new_wine_path do %>
+          <i class="fa-solid fa-camera icon"></i>
+        <% end %>
+        <p>Caméra</p>
+      </div>
+      <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
+        <%= link_to "#" do %>
+          <i class="fa-solid fa-cheese icon" style="color: #ffffff;"></i>
+        <% end %>
+        <p>Suggestions</p>
+      </div>
+      <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
+        <%= link_to cave_users_path do %>
+          <i class="fa-solid fa-wine-bottle icon" style="color: #ffffff;"></i>
+        <% end %>
+        <p>Ma Cave</p>
+      </div>
+      <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
+        <%= link_to wines_path do %>
+          <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+        <% end %>
+        <p>Accueil</p>
+      </div>
     </div>
   </div>
 <% end %>
