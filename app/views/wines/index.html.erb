@@ -1,6 +1,6 @@
 <div class="top-page-design"></div>
 
-<div class="container">
+<div class="container-index">
   <div class="header-index">
     <%= cl_image_tag current_user.avatar.key %>
     <h1>Grape&Cheese</h1>
@@ -29,14 +29,27 @@
       <% end %>
     </div>
   </div>
-  <div id="wines">
-    <% if @wines.any? %>
-      <% @wines.each do |wine| %>
-        <h4><%= wine.name %></h4>
-        <p><%= wine.description %></p>
+    <div class="search-wines" data-controller="index-search">
+    <h2>Trouver un vin</h2>
+    <div class="search-form" >
+      <%= form_with url: wines_path, method: :get, html: {class: "", data: {index_search_target: "form"}} do |f| %>
+        <%= f.text_field :query,
+                        class: "input-form",
+                        placeholder: "Que cherchez-vous comme vin ?",
+                        value: params[:query],
+                        data: {
+                          index_search_target: "input",
+                          action: "keyup->index-search#update"
+                        } %>
+
+          <%= button_tag :submit, class: 'btn-search' do %>
+            <i class="fa-solid fa-magnifying-glass" style="color: #e2c799;"></i>
+          <% end %>
+
       <% end %>
-    <% else %>
-      <em>Sorry, no wines found.</em>
-    <% end %>
+    </div>
+    <div class="research-container">
+      <%= render "wines/list" %>
+    </div>
   </div>
 </div>

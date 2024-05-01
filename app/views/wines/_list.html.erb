@@ -1,0 +1,29 @@
+<div data-index-search-target="list">
+  <% @wines.each do |wine| %>
+    <%= link_to wine_path(wine) do %>
+      <div class="card-product">
+        <% if wine.photo.key.nil? %>
+          <%= image_tag 'default-wine.jpg' %>
+        <% else %>
+          <%= cl_image_tag wine.photo.key %>
+        <% end %>
+        <div class="card-product-infos">
+          <div class="padding-infos">
+            <h3><%= wine.name %></h2>
+            <p><%= wine.vignoble %></p>
+            <p><%= wine.year %></p>
+          </div>
+          <% if wine.color == "Rouge" %>
+            <div class="wine-rouge"></div>
+          <% elsif wine.color == "Rosé" %>
+            <div class="wine-rose"></div>
+          <% elsif wine.color == "Blanc" %>
+            <div class="wine-blanc"></div>
+          <% else %>
+            <div></div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
