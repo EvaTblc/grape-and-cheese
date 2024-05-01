@@ -1,0 +1,11 @@
+<%= @wines.each do |wine| %>
+  <%= link_to wine_path(wine) do %>
+    <div class="card-product">
+      <%= cl_image_tag wine.photo.key %>
+      <div class="card-product-infos">
+        <h2><%= wine.name %></h2>
+        <p><%= wine.description %></p>
+      </div>
+    </div>
+  <% end %>
+<% end %>

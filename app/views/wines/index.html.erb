@@ -6,27 +6,46 @@
     <h1>Grape&Cheese</h1>
   </div>
 
-<div class="cards-navig">
+  <div class="cards-navig">
 
-  <div id="cave" class="button-cards">
-    <%= link_to "#" do %>
-      <%= image_tag 'cave.jpg' %>
-      <p>Ma Cave</p>
-    <% end %>
+    <div class="button-cards cave">
+      <%= link_to "#" do %>
+        <%= image_tag 'cave.jpg' %>
+        <p>Ma Cave</p>
+      <% end %>
+    </div>
+
+    <div class="button-cards suggestions">
+      <%= link_to "#" do %>
+        <%= image_tag 'cheese.jpg' %>
+        <p>Suggestions</p>
+      <% end %>
+    </div>
+
+    <div class="button-cards messages">
+      <%= link_to "#" do %>
+        <%= image_tag 'phone.jpg' %>
+        <p>Messages</p>
+      <% end %>
+    </div>
   </div>
 
-  <div id="suggestions" class="button-cards">
-    <%= link_to "#" do %>
-      <%= image_tag 'cheese.jpg' %>
-      <p>Suggestions</p>
-    <% end %>
+  <div class="search-wines">
+    <h2>Trouver un vin</h2>
+    <div class="search-form">
+      <%= form_with url: wines_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Quel vin cherches-tu ?"
+          %>
+        <button class="btn-search" type="submit" name="action" value="search">
+          <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+        </button>
+      <% end %>
+    </div>
+    <div class="research-container">
+      <%= render "list" %>
+    </div>
   </div>
-
-  <div id="messages" class="button-cards">
-    <%= link_to "#" do %>
-      <%= image_tag 'phone.jpg' %>
-      <p>Messages</p>
-    <% end %>
-  </div>
-</div>
 </div>

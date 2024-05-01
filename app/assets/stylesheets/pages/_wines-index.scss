@@ -35,53 +35,82 @@
     border-radius: 2px;
     }
   }
-  
-  #cave {
+
+  .cave {
     img {
       height: 170px;
       object-fit: cover;
       position: relative;
+      border-radius: 2px;
+      opacity: 0.4;
     }
     p {
       font-family: 'Oswald', serif;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 400;
       color: $burgundy;
       position: absolute;
       top: 180px;
-      left: 45px;
+      left: 42px;
     }
   }
 
-  #suggestions {
+  .suggestions {
     img {
       height: 170px;
       object-fit: cover;
       position: relative;
+      border-radius: 2px;
+      opacity: 0.4;
     }
     p {
       font-family: 'Oswald', serif;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 400;
       color: $burgundy;
       position: absolute;
       top: 180px;
-      left: 45px;
+      left: 150px;
     }
   }
-  #messages {
+
+  .messages {
     img {
       height: 170px;
       object-fit: cover;
       position: relative;
+      border-radius: 2px;
+      opacity: 0.4;
     }
     p {
       font-family: 'Oswald', serif;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 400;
       color: $burgundy;
       position: absolute;
       top: 180px;
-      left: 45px;
+      right: 42px;
+    }
+  }
+
+  .search-wines {
+    h2 {
+      font-family: 'Oswald', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: $burgundy;
+      padding: 10px;
+    }
+    .search-form {
+      padding-left: 10px;
+      padding-right: 10px;
+      .btn-search {
+        background-color: $green;
+        width: 50px;
+        border-top-right-radius: 10px;
+      }
+    }
+    .research-container {
+      padding: 10px;
     }
   }
