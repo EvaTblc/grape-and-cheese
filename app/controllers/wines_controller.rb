@@ -1,17 +1,7 @@
 class WinesController < ApplicationController
   # SKIP BEFORE ACTION ??????
   def index
-    if params[:query].present?
-      @wines = Wine.search_by_wines(params[:query])
-    else
-      @wines = Wine.where.not(user: current_user).first(5)
-    end
-    @user_wines = Wine.where(user: current_user).first(5)
-
-    respond_to do |format|
-      format.html
-      format.text { render partial: "wines/cards", locals: { wines: @wines }, formats: [:html] }
-    end
+    @wines = Wine.all
   end
 
   def show

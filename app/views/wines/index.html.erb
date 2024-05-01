@@ -29,23 +29,14 @@
       <% end %>
     </div>
   </div>
-
-  <div class="search-wines">
-    <h2>Trouver un vin</h2>
-    <div class="search-form">
-      <%= form_with url: wines_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Quel vin cherches-tu ?"
-          %>
-        <button class="btn-search" type="submit" name="action" value="search">
-          <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
-        </button>
+  <div id="wines">
+    <% if @wines.any? %>
+      <% @wines.each do |wine| %>
+        <h4><%= wine.name %></h4>
+        <p><%= wine.description %></p>
       <% end %>
-    </div>
-    <div class="research-container">
-      <%= render "list" %>
-    </div>
+    <% else %>
+      <em>Sorry, no wines found.</em>
+    <% end %>
   </div>
 </div>
