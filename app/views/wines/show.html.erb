@@ -9,6 +9,7 @@
   <h2 class="header-show-title">
     <%= @wine.name %>
   </h2>
+    <p><em>Cuvée <%= @wine.year %></em></p>
 </div>
 
 <div class="container-show">
@@ -25,11 +26,18 @@
 
   <div class="rounded-lg border">
     <div data-tabs-target="tab" id="tab1">
-      <p>infos</p>
+      <%= @wine.vignoble %>
+      <%= @wine.color %>
+      <%= @wine.price %>
+      <%= @wine.alcool_degree %>
     </div>
 
     <div data-tabs-target="tab" id="tab2" class='hidden'>
-      <p>avis</p>
+      <% @ratings.each do |rating| %>
+        <%= rating.description %>
+        <%= rating.votes %>
+        <%= rating.user.first_name %>
+      <% end %>
     </div>
 
     <div data-tabs-target="tab" id="tab3" class='hidden'>

@@ -15,7 +15,16 @@
     font-family: "Inika", serif;
     font-style: normal;
     font-size: 35px;
-    line-height: 1.8;
+    line-height: 1.2;
+    text-align: right;
+    width: 100%;
+  }
+  p {
+    padding-right: 10px;
+    color: $burgundy;
+    font-family: "Inika", serif;
+    font-style: normal;
+    font-size: 18px;
     text-align: right;
     width: 100%;
   }

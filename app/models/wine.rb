@@ -1,4 +1,5 @@
 class Wine < ApplicationRecord
+  has_many :ratings
   belongs_to :user
   has_one_attached :photo
 

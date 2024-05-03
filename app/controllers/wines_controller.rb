@@ -15,6 +15,7 @@ class WinesController < ApplicationController
 
   def show
     @wine = Wine.find(params[:id])
+    @ratings = Rating.where(wine: @wine)
 
     respond_to do |format|
       format.html
