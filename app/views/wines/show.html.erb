@@ -1,1 +1,41 @@
-<%= @wine.name %>
+<div class="top-page-design"></div>
+
+<div class="header-show">
+  <% if @wine.photo.attached? %>
+    <%= cl_image_tag @wine.photo.key %>
+  <% else %>
+    <%= image_tag "default-wine.jpg" %>
+  <% end %>
+  <h2 class="header-show-title">
+    <%= @wine.name %>
+  </h2>
+</div>
+
+<div class="container-show">
+  <div
+  data-controller="tabs"
+  data-tabs-active-class="active"
+  data-tabs-default-tab-value="tab1">
+
+  <div class="flex nav-show">
+    <button id="tab1" data-tabs-target="btn" data-action="click->tabs#select">Infos</button>
+    <button id="tab2" data-tabs-target="btn" data-action="click->tabs#select">Avis</button>
+    <button id="tab3" data-tabs-target="btn" data-action="click->tabs#select">Plus</button>
+  </div>
+
+  <div class="rounded-lg border">
+    <div data-tabs-target="tab" id="tab1">
+      <p>infos</p>
+    </div>
+
+    <div data-tabs-target="tab" id="tab2" class='hidden'>
+      <p>avis</p>
+    </div>
+
+    <div data-tabs-target="tab" id="tab3" class='hidden'>
+      <p>plus</p>
+    </div>
+
+  </div>
+</div>
+</div>

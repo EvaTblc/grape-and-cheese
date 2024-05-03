@@ -1,0 +1,43 @@
+.header-show{
+  // position: relative;
+  width: 100%;
+  height:100%;
+  img {
+    object-fit: contain;
+    opacity: 0.7
+  }
+  .header-show-title {
+    // position: absolute;
+    // top: 195px;
+    // right: 0px;
+    padding-right: 10px;
+    color: $burgundy;
+    font-family: "Inika", serif;
+    font-style: normal;
+    font-size: 35px;
+    line-height: 1.8;
+    text-align: right;
+    width: 100%;
+  }
+}
+
+.container-show {
+  .nav-show {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: $burgundy solid 1px;
+    button {
+      width: 120px;
+      height: 40px;
+      font-family: "Inika", serif;
+      color: $burgundy;
+    }
+    .active {
+      background-color: $burgundy;
+      border-top-right-radius: 15px;
+      border-top-left-radius: 15px;
+      font-family: "Inika", serif;
+      color: $cream;
+    }
+  }
+}

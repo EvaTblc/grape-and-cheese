@@ -15,6 +15,12 @@ class WinesController < ApplicationController
 
   def show
     @wine = Wine.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'wines/infos', locals: { wine: @wine }, formats: [:html] }
+    end
+
   end
 
   def new
