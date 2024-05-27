@@ -1,0 +1,5 @@
+<%= simple_form_for [@wine, @rating] do |f|%>
+  <%= f.input :description %>
+  <%= f.input :votes %>
+  <%= f.submit class: "add-rating"%>
+<% end %>

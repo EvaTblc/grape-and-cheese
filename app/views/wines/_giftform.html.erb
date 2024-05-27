@@ -1,0 +1,5 @@
+<%= simple_form_for [@wine, @gift] do |f|%>
+  <%= f.input :possession, label: "Comment avez-vous obtenu ce vin ?" %>
+  <%= f.input :datepossession, html5: true, label: "Quand avez-vous obtenu ce vin ?"%>
+  <%= f.submit class: "add-rating"%>
+<% end %>

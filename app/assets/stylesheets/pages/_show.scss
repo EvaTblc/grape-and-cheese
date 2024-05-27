@@ -79,6 +79,7 @@
   font-size: 14px;
   opacity: .7;
   margin: 0;
+  margin-right: 25px;
 }
 
 
@@ -93,7 +94,7 @@
   width: 40px;
   align-self: flex-end;
   position: absolute;
-  top: 55px;
+  top: 10px;
   right: 10px;
 }
 
@@ -103,4 +104,23 @@
   text-align: center;
   width: 100%;
   color: $cream;
+  margin-bottom: 10px;
+}
+
+.infos {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 5px;
+}
+
+.infos-tech {
+  background-color: antiquewhite;
+  color: $burgundy;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 15px;
+  p {
+    margin-bottom: 0px;
+  }
 }

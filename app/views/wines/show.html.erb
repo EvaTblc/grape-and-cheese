@@ -9,7 +9,7 @@
   <h2 class="header-show-title">
     <%= @wine.name %>
   </h2>
-    <p><em>Cuvée <%= @wine.year %></em></p>
+    <p><em>Cuvée <%= @wine.year %></em> 🍷 <%= @wine.color %></p>
 </div>
 
 <div class="container-show">
@@ -25,12 +25,13 @@
   </div>
 
   <div class="rounded-lg categories">
-    <div data-tabs-target="tab" id="tab1">
-      🌍 <%= @wine.vignoble %> <br>
-      🌍 <%= @wine.description %> <br>
-      🍷 <%= @wine.color %> <br>
-      💸 <%= @wine.price %>€<br>
-      🌡️ <%= @wine.alcool_degree %>° <br>
+    <div data-tabs-target="tab" id="tab1" class="infos">
+      <p><%= @wine.description %></p>
+      <div class= "infos-tech">
+      <p>🌍 <%= @wine.vignoble %></p>
+      <p>💸 <%= @wine.price %>€</p>
+      <p>🌡️ <%= @wine.alcool_degree %>°</p>
+      </div>
     </div>
 
     <div data-tabs-target="tab" id="tab2" class='hidden'>
@@ -39,18 +40,39 @@
           <p><%= rating.description %></p>
           <h2 class="card-trip-pricing"><%= rating.evaluation %></h2>
           <%= cl_image_tag rating.user.avatar.key, class: "card-trip-user avatar-bordered" %>
+          <% if rating.user == current_user %>
+            <%= link_to rating_path(rating), data: {turbo_method: :delete} do %>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
+          <% end %>
         </div>
       <% end %>
-      <%= button_to "Ajouter un avis", root_path, class: "add-rating" %>
+
+      <div data-controller="toggle">
+        <button data-action="click->toggle#fire" class="add-rating">Ajouter un avis</button>
+        <div data-toggle-target="togglableElement" class="d-none">
+          <%= render "ratingform", rating: @rating, wine: @wine %>
+        </div>
+      </div>
     </div>
 
     <div data-tabs-target="tab" id="tab3" class='hidden'>
       <% if @gifts.any? %>
         <% @gifts.each do |gift| %>
-          <%= gift.found_on %>
+          <p><%= gift.possession %> le <%= gift.datepossession.strftime('%a %d %b %Y')  %></p>
+          <%= link_to gift_path(gift), data: {turbo_method: :delete} do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
         <% end %>
       <% else %>
         <p>Vous n'avez pas ce vin dans votre cave</p>
+        <div data-controller="toggle">
+          <button data-action="click->toggle#fire" class="add-rating">Ajouter à votre Cave</button>
+          <div data-toggle-target="togglableElement" class="d-none">
+            <%= render "giftform", rating: @gift, wine: @wine %>
+          </div>
+        </div>
+      </div>
       <% end %>
     </div>
 
