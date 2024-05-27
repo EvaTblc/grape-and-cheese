@@ -24,24 +24,33 @@
     <button id="tab3" data-tabs-target="btn" data-action="click->tabs#select">Plus</button>
   </div>
 
-  <div class="rounded-lg border">
+  <div class="rounded-lg categories">
     <div data-tabs-target="tab" id="tab1">
-      <%= @wine.vignoble %>
-      <%= @wine.color %>
-      <%= @wine.price %>
-      <%= @wine.alcool_degree %>
+      🌍 <%= @wine.vignoble %> <br>
+      🍷 <%= @wine.color %> <br>
+      💸 <%= @wine.price %>€<br>
+      🌡️ <%= @wine.alcool_degree %>° <br>
     </div>
 
     <div data-tabs-target="tab" id="tab2" class='hidden'>
+      <%= button_to "Ajouter un avis", root_path %>
       <% @ratings.each do |rating| %>
-        <%= rating.description %>
-        <%= rating.votes %>
-        <%= rating.user.first_name %>
+        <div class="card-trip-infos">
+          <p><%= rating.description %></p>
+          <h2 class="card-trip-pricing"><%= rating.evaluation %></h2>
+          <%= cl_image_tag rating.user.avatar.key, class: "card-trip-user avatar-bordered" %>
+        </div>
       <% end %>
     </div>
 
     <div data-tabs-target="tab" id="tab3" class='hidden'>
-      <p>plus</p>
+      <% if @gifts.any? %>
+        <% @gifts.each do |gift| %>
+          <%= gift.found_on %>
+        <% end %>
+      <% else %>
+        <p>Vous n'avez pas ce vin dans votre cave</p>
+      <% end %>
     </div>
 
   </div>

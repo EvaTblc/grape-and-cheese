@@ -1,6 +1,6 @@
 class Wine < ApplicationRecord
   has_many :ratings
-  belongs_to :user
+  has_many :gifts
   has_one_attached :photo
 
   include PgSearch::Model

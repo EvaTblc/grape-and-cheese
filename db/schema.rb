@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_02_131108) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_06_091327) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_02_131108) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "gifts", force: :cascade do |t|
+    t.text "found_on"
+    t.bigint "wine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_gifts_on_user_id"
+    t.index ["wine_id"], name: "index_gifts_on_wine_id"
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -82,6 +92,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_02_131108) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "gifts", "users"
+  add_foreign_key "gifts", "wines"
   add_foreign_key "ratings", "users"
   add_foreign_key "ratings", "wines"
 end

@@ -16,6 +16,7 @@ class WinesController < ApplicationController
   def show
     @wine = Wine.find(params[:id])
     @ratings = Rating.where(wine: @wine)
+    @gifts = Gift.where(wine: @wine, user: current_user)
 
     respond_to do |format|
       format.html

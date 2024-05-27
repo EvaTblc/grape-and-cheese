@@ -3,6 +3,7 @@ Faker::Config.locale = 'fr'
 
 puts "Destroy all"
 Rating.destroy_all
+Gift.destroy_all
 Wine.destroy_all
 User.destroy_all
 
@@ -15,8 +16,14 @@ puts "Create users"
     email: "#{Faker::Fantasy::Tolkien.race}@lordofthering.com",
     password: "password"
     )
+    file = File.open(Rails.root.join("app/assets/images/avatar.jpg"))
+    user.avatar.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
   user.save!
 end
+
+eva = User.create(first_name: "Eva", last_name: "Touboulic", email: "evatblc@gmail.com", password: "password")
+file = File.open(Rails.root.join("app/assets/images/avatar.jpg"))
+eva.avatar.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
 puts "Create wines"
 
@@ -28,7 +35,6 @@ puts "Create wines"
     alcool_degree: rand(10.2..15.00).ceil(2),
     year: rand(1990..2024),
     price: rand(5.00..30.00).ceil(2),
-    user: User.all.sample
   )
   wine.save!
 end
