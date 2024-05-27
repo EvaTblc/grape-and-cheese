@@ -66,6 +66,7 @@
   flex-direction: column;
   padding: 10px;
   position: relative;
+  margin-bottom: 15px;
 }
 
 .card-trip-infos h2 {
@@ -94,4 +95,12 @@
   position: absolute;
   top: 55px;
   right: 10px;
+}
+
+.add-rating {
+  background-color: $burgundy;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  color: $cream;
 }

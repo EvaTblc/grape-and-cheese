@@ -27,13 +27,13 @@
   <div class="rounded-lg categories">
     <div data-tabs-target="tab" id="tab1">
       🌍 <%= @wine.vignoble %> <br>
+      🌍 <%= @wine.description %> <br>
       🍷 <%= @wine.color %> <br>
       💸 <%= @wine.price %>€<br>
       🌡️ <%= @wine.alcool_degree %>° <br>
     </div>
 
     <div data-tabs-target="tab" id="tab2" class='hidden'>
-      <%= button_to "Ajouter un avis", root_path %>
       <% @ratings.each do |rating| %>
         <div class="card-trip-infos">
           <p><%= rating.description %></p>
@@ -41,6 +41,7 @@
           <%= cl_image_tag rating.user.avatar.key, class: "card-trip-user avatar-bordered" %>
         </div>
       <% end %>
+      <%= button_to "Ajouter un avis", root_path, class: "add-rating" %>
     </div>
 
     <div data-tabs-target="tab" id="tab3" class='hidden'>

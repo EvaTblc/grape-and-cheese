@@ -21,7 +21,7 @@ puts "Create users"
   user.save!
 end
 
-eva = User.create(first_name: "Eva", last_name: "Touboulic", email: "evatblc@gmail.com", password: "password")
+eva = User.create!(first_name: "Eva", last_name: "Touboulic", email: "evatblc@gmail.com", password: "password")
 file = File.open(Rails.root.join("app/assets/images/avatar.jpg"))
 eva.avatar.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
@@ -32,6 +32,7 @@ puts "Create wines"
     name: Faker::Coffee.blend_name,
     vignoble: Faker::Coffee.origin,
     color: Wine::COLOR.sample,
+    description: Faker::Markdown.emphasis,
     alcool_degree: rand(10.2..15.00).ceil(2),
     year: rand(1990..2024),
     price: rand(5.00..30.00).ceil(2),
