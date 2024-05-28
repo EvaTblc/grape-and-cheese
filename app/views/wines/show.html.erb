@@ -71,31 +71,38 @@
           <div class= "cards-gift">
             <div class= "cards-gift-infos">
               <p><%= gift.possession %> le <%= I18n.localize(gift.datepossession)  %></p>
-              <p><%= pluralize(gift.quantity, 'bouteille') %></p>
+              <p><%= gift.quantity %> <%= gift.quantity > 1 ? 'bouteilles' : 'bouteille' %></p>
               <%= link_to gift_path(gift), data: {turbo_method: :delete} do %>
                 <i class="fa-solid fa-trash"></i>
               <% end %>
             </div>
-            <div data-controller="usergifts" class="checkbox-gift">
-              <input type="checkbox" data-usergifts-target="checkbox" data-action="click->usergifts#check"><p>Lié à un utilisateur ?</p>
-              <div class="d-none" data-usergifts-target="userSearch">
-                <%= form_with url: users_path, method: :get, html: {class: "", data: {usergifts_target: "form"}} do |f| %>
-                  <%= f.text_field :query,
-                    class: "input-form",
-                    placeholder: "Que cherchez-vous comme vin ?",
-                    value: params[:userquery],
-                    data: {
-                      usergifts_target: "input",
-                      action: "keyup->usergifts#update"
-                    } %>
-                  <%= button_tag :submit, class: 'btn-search' do %>
-                    <i class="fa-solid fa-magnifying-glass" style="color: #e2c799;"></i>
-                  <% end %>
-                <% end %>
-                <% @gift = gift %>
-                <%= render "gifter/usergifts/adduser", gift: @gift %>
-              </div>
+            <% if gift.usergifts.any? %>
+            <div class="gifter-infos">
+              <%= cl_image_tag gift.usergifts.first.gifter.avatar.key, class: "avatar-bordered" %>
+              <p><%= gift.usergifts.first.gifter.first_name %> <%= gift.usergifts.first.gifter.last_name %></p>
             </div>
+            <% else %>
+              <div data-controller="usergifts" class="checkbox-gift">
+                <input type="checkbox" data-usergifts-target="checkbox" data-action="click->usergifts#check"><p>Lié à un utilisateur ?</p>
+                <div class="d-none" data-usergifts-target="userSearch">
+                  <%= form_with url: users_path, method: :get, html: {class: "", data: {usergifts_target: "form"}} do |f| %>
+                    <%= f.text_field :query,
+                      class: "input-form",
+                      placeholder: "Que cherchez-vous comme vin ?",
+                      value: params[:userquery],
+                      data: {
+                        usergifts_target: "input",
+                        action: "keyup->usergifts#update"
+                      } %>
+                    <%= button_tag :submit, class: 'btn-search' do %>
+                      <i class="fa-solid fa-magnifying-glass" style="color: #e2c799;"></i>
+                    <% end %>
+                  <% end %>
+                  <% @gift = gift %>
+                  <%= render "gifter/usergifts/adduser", gift: @gift %>
+                </div>
+              </div>
+            <% end %>
           </div>
         <% end %>
       <% else %>
