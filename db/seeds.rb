@@ -3,6 +3,7 @@ Faker::Config.locale = 'fr'
 
 puts "Destroy all"
 Rating.destroy_all
+Usergift.destroy_all
 Gift.destroy_all
 Wine.destroy_all
 User.destroy_all

@@ -1,0 +1,2 @@
+module Gifter::UsergiftsHelper
+end

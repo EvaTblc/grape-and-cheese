@@ -19,7 +19,7 @@ class GiftsController < ApplicationController
   private
 
   def gift_params
-    params.require(:gift).permit(:possession, :datepossession)
+    params.require(:gift).permit(:possession, :datepossession, :quantity)
   end
 
 end

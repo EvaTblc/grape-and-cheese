@@ -41,10 +41,9 @@ fr:
     - samedi
     formats:
       default: "%d/%m/%Y"
-      long: "%-d %B %Y"
-      short: "%-d %b"
+      short: "%d %b"
+      long: "%A %d %B %Y"
     month_names:
-    -
     - janvier
     - février
     - mars

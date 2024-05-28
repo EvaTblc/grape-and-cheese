@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   resources :ratings, only: [:destroy]
   resources :gifts, only: [:destroy]
 
-  resources :users, only: [] do
+  namespace :gifter do
+    resources :usergifts, only: [:create]
+  end
+
+  resources :users, only: [:index] do
     collection do
       get :cave
     end

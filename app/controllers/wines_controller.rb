@@ -19,12 +19,7 @@ class WinesController < ApplicationController
     @rating = Rating.new
     @gifts = Gift.where(wine: @wine, user: current_user)
     @gift = Gift.new
-
-    respond_to do |format|
-      format.html
-      format.text { render partial: 'wines/infos', locals: { wine: @wine }, formats: [:html] }
-    end
-
+    @users = User.all
   end
 
   def new

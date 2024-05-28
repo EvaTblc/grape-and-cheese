@@ -40,3 +40,25 @@
     color: $burgundy;
   }
 }
+
+.cards-gift {
+  background-color: white;
+  padding: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 15px;
+  .cards-gift-infos {
+    display: flex;
+    justify-content: space-between;
+    p {
+      font-size: 18px;
+      margin: 0px;
+    }
+  }
+  .checkbox-gift {
+    display: flex;
+    align-items: baseline;
+    p {
+      margin-left: 5px;
+    }
+  }
+}
