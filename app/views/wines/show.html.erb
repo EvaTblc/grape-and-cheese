@@ -72,9 +72,6 @@
             <div class= "cards-gift-infos">
               <p><%= gift.possession %> le <%= I18n.localize(gift.datepossession)  %></p>
               <p><%= gift.quantity %> <%= gift.quantity > 1 ? 'bouteilles' : 'bouteille' %></p>
-              <%= link_to gift_path(gift), data: {turbo_method: :delete} do %>
-                <i class="fa-solid fa-trash"></i>
-              <% end %>
             </div>
             <% if gift.usergifts.any? %>
             <div class="gifter-infos">
@@ -84,7 +81,7 @@
             <% else %>
               <div data-controller="usergifts" class="checkbox-gift">
                 <input type="checkbox" data-usergifts-target="checkbox" data-action="click->usergifts#check"><p>Lié à un utilisateur ?</p>
-                <div class="d-none" data-usergifts-target="userSearch">
+                <div class="d-none form-gifter" data-usergifts-target="userSearch">
                   <%= form_with url: users_path, method: :get, html: {class: "", data: {usergifts_target: "form"}} do |f| %>
                     <%= f.text_field :query,
                       class: "input-form",
@@ -103,6 +100,11 @@
                 </div>
               </div>
             <% end %>
+            <div class="btn-gift">
+              <%= link_to gift_path(gift), data: {turbo_method: :delete} do %>
+                <i class="fa-solid fa-trash" style="color: #E2C799"></i>
+              <% end %>
+            </div>
           </div>
         <% end %>
       <% else %>

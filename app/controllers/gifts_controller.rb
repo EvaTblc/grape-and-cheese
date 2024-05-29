@@ -11,6 +11,8 @@ class GiftsController < ApplicationController
 
   def destroy
     gift = Gift.find(params[:id])
+    usergift = Usergift.find_by(gift: gift, user_id: current_user.id)
+    usergift.destroy
     gift.destroy
     wine = gift.wine
 

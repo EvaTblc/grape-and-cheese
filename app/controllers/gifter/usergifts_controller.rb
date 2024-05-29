@@ -1,6 +1,7 @@
 class Gifter::UsergiftsController < ApplicationController
   def create
     usergift = Usergift.new
+    usergift.user_id = current_user.id
     gift = Gift.find(params[:gift])
     wine = gift.wine
     usergift.gift = Gift.find(params[:gift])

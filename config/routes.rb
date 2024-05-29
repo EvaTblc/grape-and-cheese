@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index] do
-    collection do
+    member do
       get :cave
     end
   end

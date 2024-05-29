@@ -20,7 +20,7 @@
         <p>Suggestions</p>
       </div>
       <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
-        <%= link_to cave_users_path do %>
+        <%= link_to cave_user_path(current_user) do %>
           <i class="fa-solid fa-wine-bottle icon" style="color: #E2C799;"></i>
         <% end %>
         <p>Ma Cave</p>

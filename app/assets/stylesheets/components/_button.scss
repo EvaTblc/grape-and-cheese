@@ -27,3 +27,10 @@ a {
   border-color: yellowgreen;
   background-color: yellowgreen;
 }
+
+.btn-gift {
+  display: flex;
+  justify-content: center;
+  background-color: $burgundy;
+  color: $cream;
+}
