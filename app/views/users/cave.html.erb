@@ -1,2 +1,4 @@
 <%= @user.first_name %>
-<%= @gifts.count %>
+<% @wines.uniq.each do |wine| %>
+  <%= wine.name %>
+<% end %>

@@ -18,6 +18,6 @@ class UsersController < ApplicationController
     @user = current_user
     @gifts = Gift.where(user: current_user)
     @wines = []
-    @gifts.each { |wine| @wines << wine }
+    @gifts.each { |gift| @wines << gift.wine }
   end
 end
