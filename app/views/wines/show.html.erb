@@ -59,7 +59,7 @@
     <div data-tabs-target="tab" id="tab3" class='hidden'>
 
         <div data-controller="toggle">
-          <button data-action="click->toggle#fire" class="add-rating">Ajouter à votre Cave</button>
+          <button data-action="click->toggle#fire" data-toggle-target="addBtn" class="add-rating">Ajouter à votre Cave</button>
           <div data-toggle-target="togglableElement" class="d-none">
             <%= render "giftform", rating: @gift, wine: @wine %>
           </div>
@@ -70,8 +70,11 @@
         <% @gifts.each do |gift| %>
           <div class= "cards-gift">
             <div class= "cards-gift-infos">
-              <p><%= gift.possession %> le <%= I18n.localize(gift.datepossession)  %></p>
-              <p><%= gift.quantity %> <%= gift.quantity > 1 ? 'bouteilles' : 'bouteille' %></p>
+              <div class="gift-title-date">
+                <h4><%= gift.possession %></h4>
+                <p><%= I18n.localize(gift.datepossession)  %></p>
+              </div>
+              <p class="number-bottles"><i class="fa-solid fa-wine-bottle"></i> x <%= gift.quantity %></p>
             </div>
             <% if gift.usergifts.any? %>
             <div class="gifter-infos">

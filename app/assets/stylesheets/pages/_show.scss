@@ -58,15 +58,6 @@
   }
 }
 
-.add-rating {
-  background-color: $burgundy;
-  border-radius: 5px;
-  text-align: center;
-  width: 100%;
-  color: $cream;
-  margin-bottom: 10px;
-}
-
 .infos {
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -87,4 +78,19 @@
 
 .form-gifter {
   margin-left: 15px;
+}
+
+.gift-title-date {
+  h4 {
+    font-family: "Inika", sans-serif;
+  }
+
+  p {
+    font-size: 15px;
+    margin-top: 0px;
+  }
+}
+
+.number-bottles {
+  margin-top: 1rem;
 }

@@ -46,14 +46,11 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 15px;
   border-radius: 5px;
+  padding: 10px;
   .cards-gift-infos {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
-    p {
-      font-size: 18px;
-      margin: 0px;
-    }
+    margin: 5px;
   }
   .checkbox-gift {
     display: flex;
