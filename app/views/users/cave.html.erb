@@ -1,4 +1,12 @@
-<%= @user.first_name %>
-<% @wines.uniq.each do |wine| %>
-  <%= wine.name %>
-<% end %>
+
+<%# <% @wines.uniq.each do |wine| %> %>
+  <%# <%= wine.name %> %>
+<%# <% end %> %>
+
+<div class="container">
+  <div class="header-cave">
+    <%= cl_image_tag current_user.avatar.key %>
+    <h1>Grape&Cheese</h1>
+  </div>
+
+</div>

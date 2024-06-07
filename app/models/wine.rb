@@ -13,4 +13,7 @@ class Wine < ApplicationRecord
 
   COLOR = ["Rouge", "Blanc", "Rosé"]
   validates :color, inclusion: { in: Wine::COLOR }
+
+  # enum color_wine: ["Rouge", "Blanc", "Rosé"]
+
 end

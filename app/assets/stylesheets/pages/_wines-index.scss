@@ -14,13 +14,16 @@
     font-size: 40px;
     line-height: 1.8;
   }
-  img {
-    object-fit: contain;
-    width: 20%;
-    height: 20%;
-    border-radius: 50%
-  }
 }
+
+.user-avatar {
+  object-fit: contain;
+  width: 20%;
+  height: 20%;
+    img {
+      border-radius: 50%
+    }
+  }
 
 .cards-navig {
   display: flex;
