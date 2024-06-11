@@ -1,7 +1,10 @@
 <div data-usergifts-target="listUser">
   <% @users.each do |user| %>
     <%= button_to gifter_usergifts_path(gifter: user, gift: @gift), turbo_method: :post do %>
-      <%= user.first_name %> <%= user.last_name %>
+      <div>
+        <%= user.first_name %> <%= user.last_name %>
+        <em><%= user.username %></em>
+      </div>
     <% end %>
   <% end %>
 </div>

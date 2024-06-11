@@ -13,7 +13,8 @@ puts "Create users"
 3.times do
   user = User.new(
     first_name: Faker::Fantasy::Tolkien.character,
-    last_name: " ",
+    last_name: "Last name ",
+    username: "Username ",
     email: "#{Faker::Fantasy::Tolkien.race}@lordofthering.com",
     password: "password"
     )
@@ -22,7 +23,7 @@ puts "Create users"
   user.save!
 end
 
-eva = User.create!(first_name: "Eva", last_name: "Touboulic", email: "evatblc@gmail.com", password: "password")
+eva = User.create!(first_name: "Eva", last_name: "Touboulic", username: "Erya", email: "evatblc@gmail.com", password: "password")
 file = File.open(Rails.root.join("app/assets/images/avatar.jpg"))
 eva.avatar.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 

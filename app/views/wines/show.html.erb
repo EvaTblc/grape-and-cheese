@@ -79,7 +79,7 @@
             <% if gift.usergifts.any? %>
             <div class="gifter-infos">
               <%= cl_image_tag gift.usergifts.first.gifter.avatar.key, class: "avatar-bordered" %>
-              <p><%= gift.usergifts.first.gifter.first_name %> <%= gift.usergifts.first.gifter.last_name %></p>
+              <p><%= gift.usergifts.first.gifter.username %></p>
             </div>
             <% else %>
               <div data-controller="usergifts" class="checkbox-gift">

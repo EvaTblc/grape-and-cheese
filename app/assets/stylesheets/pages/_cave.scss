@@ -1,0 +1,21 @@
+.header-cave {
+  display: flex;
+  align-items: center;
+  margin: 15px;
+  .header-cave-user {
+    margin-left: 10px;
+    font-family: "Inika", sans-serif;
+    h2 {
+
+    }
+    h3 {
+      font-size: 13px;
+    }
+  }
+}
+
+.default-wine {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}

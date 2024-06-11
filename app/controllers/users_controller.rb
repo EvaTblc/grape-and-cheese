@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def cave
     @user = current_user
     @gifts = Gift.where(user: current_user)
-    @wines = []
-    @gifts.each { |gift| @wines << gift.wine }
+    # @wines = []
+    # @gifts.each { |gift| @wines << gift }
   end
 end
