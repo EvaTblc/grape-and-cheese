@@ -2,7 +2,7 @@
 
   <div class= "header-cave">
     <div class="user-avatar d-flex">
-      <%= cl_image_tag current_user.avatar.key %>
+      <%= cl_image_tag current_user.avatar.key, class: "user-avatar" %>
     </div>
     <div class="header-cave-user">
       <h2><%= current_user.username %></h2>
@@ -12,6 +12,7 @@
 
   <h2>Vous avez dans votre cave:</h2>
   <% @gifts.uniq.each do |gift| %>
+
     <%= link_to wine_path(gift.wine) do %>
       <div class="card-cave">
         <% if gift.wine.photo.key.nil? %>
@@ -19,20 +20,13 @@
         <% else %>
           <%= cl_image_tag gift.wine.photo.key %>
         <% end %>
+
         <div class="card-cave-infos">
           <div class="padding-infos">
-            <h3><%= gift.wine.name %></h2>
-            <p><%= gift.wine.vignoble %> de <%= gift.wine.year %></p>
-
-            <% if gift.usergifts.present? %>
-              <% gift.usergifts.each do |usergift| %>
-                <%# <%= cl_image_tag(usergift.gifter.avatar.key, width: 40, height: 40, crop: :fill) %>
-                <p><%= gift.possession %> <%= I18n.localize(gift.datepossession) %></p>
-                <p>Offert par <%= usergift.gifter.username %></p>
-              <% end %>
-            <% else %>
-              <p><%= gift.possession %> <%= I18n.localize(gift.datepossession) %></p>
-            <% end %>
+            <div>
+              <h2><%= gift.wine.name %></h2>
+              <p><%= gift.wine.vignoble %> de <%= gift.wine.year %></p>
+            </div>
           </div>
 
           <% if gift.wine.color == "Rouge" %>
@@ -47,5 +41,19 @@
         </div>
       </div>
     <% end %>
+
+     <div class="cave-gift">
+      <% if gift.usergifts.present? %>
+        <% gift.usergifts.each do |usergift| %>
+          <%# <%= cl_image_tag(usergift.gifter.avatar.key, width: 40, height: 40, crop: :fill) %>
+          <p><%= gift.possession %> <%= I18n.localize(gift.datepossession) %></p>
+          <%= cl_image_tag usergift.gifter.avatar.key, class:"user-avatar" %><p><%= usergift.gifter.username %></p>
+          <%= gift.quantity %><i class="fa-solid fa-wine-bottle" style="color: #E2C799;"></i>
+        <% end %>
+      <% else %>
+        <p><%= gift.possession %> <%= I18n.localize(gift.datepossession) %></p>
+      <% end %>
+    </div>
   <% end %>
+
 </div>

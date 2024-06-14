@@ -7,6 +7,7 @@
   align-items: center;
   margin-top: 12px;
   border-radius: 5px;
+  background-color: rgb(255, 254, 248);
 }
 
 .card-product img {
@@ -16,9 +17,9 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
-  margin: 0;
+  margin: 2px
 }
 
 .card-product p {
@@ -44,14 +45,15 @@
 }
 
 .card-cave {
-overflow: hidden;
-height: 120px;
-background: white;
-box-shadow: 0 0 15px rgba(0,0,0,0.2);
-display: flex;
-align-items: center;
-margin-top: 12px;
-border-radius: 5px;
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 20px -14px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .card-cave img {
   height: 100%;
@@ -59,22 +61,21 @@ border-radius: 5px;
   object-fit: cover;
 }
 .card-cave h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
-  margin: 0;
+  margin: 2px
 }
 .card-cave p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
+  margin-top: 0;
 }
 .card-cave .card-cave-infos {
   width: 100%;
-  // position: relative;
   .padding-infos{
-    padding: 16px;
+    padding: 8px;
   }
   h3 {
     font-family: 'Oswald', serif;
@@ -84,8 +85,18 @@ border-radius: 5px;
   }
 }
 
+.cave-gift {
+  display: flex;
+  box-shadow: 3px 16px 15px rgba(0, 0, 0, 0.2);
+  background-color: $cream;
+  color: $burgundy;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+
+}
+
 .cards-gift {
-  background-color: white;
+  background-color: rgb(250, 248, 239);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 15px;
   border-radius: 5px;

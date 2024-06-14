@@ -2,35 +2,32 @@
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon p-0 fixed-bottom <%= "no-bg" if current_page?(wines_path) %>">
     <div class="footer-container">
       <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
-        <%= link_to "#" do %>
-          <i class="fa-solid fa-comments icon" style="color: #E2C799;"></i>
+        <%= link_to wines_path do %>
+          <i class="fa-solid fa-house fa-xl" style="color: #E2C799;"></i>
         <% end %>
-        <p>Messages</p>
-      </div>
-      <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
-        <%= link_to new_wine_path do %>
-          <i class="fa-solid fa-camera icon" style="color: #E2C799;"></i>
-        <% end %>
-        <p>Caméra</p>
       </div>
       <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
         <%= link_to "#" do %>
-          <i class="fa-solid fa-cheese icon" style="color: #E2C799;"></i>
+          <i class="fa-solid fa-comments fa-xl" style="color: #E2C799;"></i>
         <% end %>
-        <p>Suggestions</p>
+      </div>
+      <div class="navbar-round">
+        <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
+          <%= link_to new_wine_path do %>
+            <i class="fa-solid fa-camera fa-2xl" style="color: #4F0F0F;"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
+        <%= link_to "#" do %>
+          <i class="fa-solid fa-cheese fa-xl" style="color: #E2C799;"></i>
+        <% end %>
       </div>
       <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
         <%= link_to cave_user_path(current_user) do %>
-          <i class="fa-solid fa-wine-bottle icon" style="color: #E2C799;"></i>
         <% end %>
-        <p>Ma Cave</p>
       </div>
-      <div class="nav-item icons <%= "active" if current_page?(wines_path) %>">
-        <%= link_to wines_path do %>
-          <i class="fa-solid fa-house" style="color: #E2C799;"></i>
-        <% end %>
-        <p>Accueil</p>
-      </div>
+
     </div>
   </div>
 <% end %>

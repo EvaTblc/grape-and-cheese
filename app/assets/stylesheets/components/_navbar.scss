@@ -1,8 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  height: 5rem;
 }
-
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -11,6 +10,18 @@
   width: 40px;
 }
 
+.navbar-round {
+  height: 80px;
+  width: 80px;
+  background-color: #E2C799;
+  border-radius: 50%;
+  margin-bottom: 14%;
+  box-shadow: 0 2px 15px #00000040;
+
+  i {
+    margin-top: 95%;
+  }
+}
 .footer-container {
   background-color: $burgundy;
   width: 100%;
@@ -18,9 +29,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 5px;
   padding: 15px 15px 10px;
-  border-radius: 5px;
   box-shadow: 0 2px 15px #00000040;
 }
 

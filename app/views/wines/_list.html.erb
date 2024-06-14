@@ -10,8 +10,7 @@
         <div class="card-product-infos">
           <div class="padding-infos">
             <h3><%= wine.name %></h2>
-            <p><%= wine.vignoble %></p>
-            <p><%= wine.year %></p>
+              <p><%= wine.vignoble %> de <%= wine.year %></p>
           </div>
           <% if wine.color == "Rouge" %>
             <div class="wine-rouge"></div>
